@@ -9,6 +9,17 @@
 <body>
     <h1>Khan Weather App</h1>
 		<br>
+		
+		{% if messages %}
+		
+		{% for message in messages %}
+			{{message}}	
+		{% endfor %}
+			
+			
+		{% endif %}
+			
+
 		<form action="">
 			<input name="name" >
 			<input type="submit" value="Add">
@@ -19,9 +30,8 @@
 		{{city.city.name}} <br> 
 		{{city.temp}} ºC <br> 
 		<img src="http://openweathermap.org/img/w/{{ city.icon }}.png" alt="icon"> <br> 
-		{{city.desc}} <br> <hr>
-
-			
+		{{city.desc}} <br> 
+		<button><a href="{%url 'delete' city.city.id%}">Delete</a></button> <hr>
 		{% endfor %}
 			
 </body>
