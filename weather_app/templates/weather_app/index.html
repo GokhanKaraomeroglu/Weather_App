@@ -8,5 +8,16 @@
 </head>
 <body>
     <h1>Khan Weather App</h1>
+		<br>
+		
+		{% for city in city_data %} <br> <hr>
+		{{city.city.name}} <br> <hr>
+		{{city.temp}} <br> <hr>
+		<img src="http://openweathermap.org/img/w/{{ city.icon }}.png" alt="icon"> <br> <hr>
+		{{city.desc}} <br> <hr>
+
+			
+		{% endfor %}
+			
 </body>
 </html>
