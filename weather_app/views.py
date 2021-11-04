@@ -19,9 +19,13 @@ def index(request):
         response = requests.get(url.format(city, config('API_KEY')))
         content = response.json()
         pprint(content)
+        tempc = round(content["main"]["temp"]- 273.15)
+        # desc1 = content["weather"][0]["description"]
+        # desc1.upper()
+        
         data = {
             "city": city,
-            "temp": content["main"]["temp"],
+            "temp": tempc,
             "desc": content["weather"][0]["description"],
             "icon": content["weather"][0]["icon"]
         }

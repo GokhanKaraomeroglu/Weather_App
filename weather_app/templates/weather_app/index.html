@@ -9,11 +9,16 @@
 <body>
     <h1>Khan Weather App</h1>
 		<br>
+		<form action="">
+			<input name="name" >
+			<input type="submit" value="Add">
+			
+		</form>
 		
-		{% for city in city_data %} <br> <hr>
-		{{city.city.name}} <br> <hr>
-		{{city.temp}} <br> <hr>
-		<img src="http://openweathermap.org/img/w/{{ city.icon }}.png" alt="icon"> <br> <hr>
+		{% for city in city_data %} <br> 
+		{{city.city.name}} <br> 
+		{{city.temp}} ºC <br> 
+		<img src="http://openweathermap.org/img/w/{{ city.icon }}.png" alt="icon"> <br> 
 		{{city.desc}} <br> <hr>
 
 			
