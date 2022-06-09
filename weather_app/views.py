@@ -5,7 +5,6 @@ from pprint import pprint
 from .models import City
 from django.contrib import messages
 
-
 def index(request):
     cities = City.objects.all()
     url = "https://api.openweathermap.org/data/2.5/weather?q={}&appid={}"
@@ -41,7 +40,6 @@ def index(request):
         tempc = round(content["main"]["temp"]- 273.15)
         # desc1 = content["weather"][0]["description"]
         # desc1.upper()
-        
         data = {
             "city": city,
             "temp": tempc,
